@@ -1,0 +1,215 @@
+
+/* Reset */
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+
+
+/* Imports */
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Variabels */
+
+
+
+:root{
+
+    /* Colors */
+
+    --main-color:#2880B9;
+    --dark-blue: #164768;
+    --banner-blue: #000226;
+    --secundary-color: #fff;
+    --accent-color: #daf0ff;
+    --accent-gray:#f3f3f3;
+
+    /* font */
+
+    --font-family: "Open Sans", sans-serif;
+
+}
+
+/* Style */
+
+/* index */
+
+html{
+    font-family: var(--font-family);
+}
+
+/* Header */
+
+header{
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+    padding: 1vw 2vw;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+header h1{
+    font-size: 2rem;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--secundary-color);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.menu li{
+    margin: 0 5px;
+    display: inline;
+}
+
+/* Main */
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    background-image: url(https://minerva.ufsc.br/~lacerda/s-cubes/s-cubes_db_logo.png);
+    background-color: var(--banner-blue);
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 
+    color: var(--secundary-color); 
+    font-size: 3rem;
+    */
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+thead{
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+    font-size: 20px;
+}
+
+
+td, th{
+    text-align: center;
+    padding: 20px;
+    border: none;
+}
+
+
+
+td a{
+    color: var(--main-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+tr{
+    transition: all 200ms ease-in;
+}
+
+tr:nth-child(even) {
+    background-color: var(--accent-gray);
+}
+
+.line {
+    cursor: pointer;
+}
+
+.line:hover{
+    background-color: var(--accent-color);    
+}
+
+table img{
+    border-radius: 50%;
+}
+
+/* footer */
+
+footer{
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+    padding: 1vw 2vw;
+    display: flex;
+    justify-content: center;
+}
+
+/* Object */
+
+.object_info_wrapper{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    
+}
+
+.object_table_title{
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.object_info h3{
+    padding: 25px 0;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+}
+
+.object_img{
+    max-width: 600px;
+    right: 100%;
+}
+
+.section_title h3{
+    padding: 25px 0;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+}
+
+details{
+    text-align: center;
+}
+
+details summary{
+    cursor: pointer;
+    padding: 25px 0;
+    border: 4px solid var(--secundary-color);
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--secundary-color);
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.other_plot_wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5px;
+}
+
+.cube_img{
+    width: 90vw;
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>S-Cubes masterlist Gallery</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>S-Cubes</h1>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="https://splus-collab.github.io/s-cubes/" target="_blank">Documentation</a></li>
+                    <li><a href="https://github.com/elacerda/s-cubes" target="_blank">Source</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="banner"></div>
+        <div class="table_wrapper">
+            <table>
+                <thead>
+                    <th>Image</th>
+                    <th>SNAME</th>
+                    <th>Name</th>
+                    <th>Field</th>
+                    <th>RA(degrees)</th>
+                    <th>DEC(degrees)</th>
+                    <th>Redshift</th>
+                    <th>R50(pix)</th>
+                    <th>Cube size(pix)</th>
+                </thead>
+                <tbody>
+                    {% for scube in scubes %}
+                    <tr class="line" data-href="{{ scube.SNAME }}.html">
+                        <td>
+                            <img src="http://minerva.ufsc.br/~lacerda/s-cubes/img/{{ scube.SNAME }}_rgb_thumb.png" alt="object image">
+                        </td>
+                        <td>{{ scube.SNAME }}</td>
+                        <td>{{ scube.NAME }}</td>
+                        <td>{{ scube.FIELD }}</td>
+                        <td>{{ scube.RA__deg }}</td>
+                        <td>{{ scube.DEC__deg }}</td>
+                        <td>{{ scube.REDSHIFT }}</td>
+                        <td>{{ scube.SIZE__pix }}</td>
+                        <td>{{ scube.SIZE }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>© Copyright 2024, Eduardo Alberto Duarte Lacerda</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let sel = document.querySelectorAll('.line')
+
+    sel.forEach((e) => {
+        e.addEventListener('click', ()=>{
+            window.open(`http://splus-collab.github.io/scubes_database/${e.dataset.href}`, `_blank`);
+        })
+    })
+</script>         
+</html>
